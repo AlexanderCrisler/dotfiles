@@ -1,5 +1,6 @@
 call plug#begin()
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'luochen1990/rainbow'
@@ -17,14 +18,14 @@ call plug#end()
 " set color scheme
 set t_Co=256
 set cursorline
-colorscheme onehalfdark
+colorscheme catppuccin-latte " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'relativepath', 'filename', 'modified', 'charvaluehex' ] ]
-      \ },
-      \ }
+       \ 'colorscheme': 'catppuccin',
+       \ 'active': {
+       \   'left': [ [ 'mode', 'paste' ],
+       \             [ 'readonly', 'relativepath', 'filename', 'modified', 'charvaluehex' ] ]
+       \ },
+       \ }
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -51,6 +52,9 @@ set number
 set relativenumber
 set ruler
 
+" 10 line padding
+set scrolloff=10
+
 " Don't make noise
 set visualbell
 
@@ -67,7 +71,6 @@ set incsearch
 " auto + smart indent for code
 set autoindent
 set smartindent
-
 
 " enable rainbow paranthesis
 let g:rainbow_active = 1 " toggle with :RainbowToggle
