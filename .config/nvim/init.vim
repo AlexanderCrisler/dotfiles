@@ -1,6 +1,6 @@
 call plug#begin()
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'tveskag/nvim-blame-line'
+Plug 'APZelos/blamer.nvim'
 "Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
@@ -87,8 +87,9 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
-" autostart gitblameline
-autocmd BufEnter * EnableBlameLine
+" blamer settings
+let g:blamer_enabled = 1
+let g:blamer_date_format = "%b %d, %Y"
 
 " ##############################################################################
 " #                                NerdTree                                    #
